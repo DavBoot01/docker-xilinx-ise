@@ -1,0 +1,14 @@
+#!/bin/bash
+
+XILINX_HOME_FOLDERS=/home/davide/docker_xilinx_ise_14.7/launcher/xilinx_home_folders/
+WORKDIR=/home/davide/ise
+HOSTNAME=davboot01
+
+docker run --rm -it -h ${HOSTNAME} --privileged --env DISPLAY=${DISPLAY} \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v ${HOME}/.Xauthority:/home/xilinx/.Xauthority:rw \
+-v ${XILINX_HOME_FOLDERS}/Xilinx:/home/xilinx/.Xilinx \
+-v ${XILINX_HOME_FOLDERS}/config:/home/xilinx/.config/Xilinx \
+-v ${WORKDIR}:/home/xilinx/workdir:rw \
+-v /dev:/dev -v /sys:/sys \
+davboot01/xilinx_ise:14.7 --cmd=ise

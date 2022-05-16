@@ -1,0 +1,8 @@
+machine=$(uname -m)
+if [[ "${machine}" == "x86_64" ]]; then
+    XILINX_SCRIPT=/opt/Xilinx/14.7/ISE_DS/settings64.sh
+else
+    XILINX_SCRIPT=/opt/Xilinx/14.7/ISE_DS/settings.sh
+fi
+
+source /opt/Xilinx/14.7/ISE_DS/settings64.sh

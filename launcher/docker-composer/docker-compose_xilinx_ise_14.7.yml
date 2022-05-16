@@ -1,0 +1,15 @@
+version: "3"
+services:
+  ubuntu_ise:
+    image: "davboot01/xilinx_ise:14.7"
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - /sys:/sys
+      - /dev:/dev
+      - ${HOME}/.Xauthority:/home/xilinx/.Xauthority:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    working_dir: /home/xilinx/
+    environment:
+      - DISPLAY=${DISPLAY}

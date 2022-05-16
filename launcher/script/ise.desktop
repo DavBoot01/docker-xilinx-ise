@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=ISE
+GenericName=Xilinx ISE Docker Container
+Icon=//home/davide/docker_farm/docker_launcher/host/ise.png
+Exec=xterm -e "ise"
