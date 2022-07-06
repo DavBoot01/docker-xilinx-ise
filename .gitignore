@@ -1,3 +1,4 @@
 resources/*
+!resources/install/
 !resources/.keepme
 Xilinx.lic
